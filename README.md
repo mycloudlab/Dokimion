@@ -9,7 +9,7 @@ Criação de um operator, que fará a gestão das operações no kubernetes para
 A operação é para ser feita pela interface gráfica e via custom resource.
 
 Teremos um CR que definirá um ambiente de teste:
-
+```yaml
 apiVersion: dokimon.mycloudlab.github.io/v1
 kind: TestEnvironment
 metadata:
@@ -26,7 +26,9 @@ spec:
         containers:
         - image: quay.io/mycloudlab/dokimon-jmeter-slave:latest
         name: jmeter-slave
-
+```
+    
+```yaml
 apiVersion: dokimon.mycloudlab.github.io/v1
 kind: TestScenario
 metadata:
@@ -41,3 +43,4 @@ spec:
     script: load-test/cenario-1/test.jmx 
   current-state: error
   elapsed-time: "1 hour 24 min 13 seg"
+```
